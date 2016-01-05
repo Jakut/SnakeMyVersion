@@ -25,36 +25,17 @@ namespace SnakeMyVersion
             Point p = new Point(4,5,'*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
-            System.Threading.Thread.Sleep(300);
-            snake.Move();
 
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                } 
+                System.Threading.Thread.Sleep(100);
+                snake.Move();
+            }
         }
-
     }
-
 }
